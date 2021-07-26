@@ -1,4 +1,4 @@
-import { AppareilService } from '../services/appareil.service';
+import { AppareilService } from '../../shared/repositories/appareil.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
