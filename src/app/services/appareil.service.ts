@@ -16,16 +16,25 @@ export class AppareilService{
   ];
 
   switchOnAll(){
-    for(let appareil of this.appareils){
+    this.appareils.forEach(appareil => {
       appareil.status = 'On';
-    }
+      console.log(appareil.name);
+    });
   }
 
-   switchOOffAll(){
+  switchOffAll(){
     for(let appareil of this.appareils){
       appareil.status = 'Off';
+      console.log(appareil.name);
     }
   }
 
+  switchOnOne(index:number){
+    this.appareils[index].status = 'On';
+  }
+
+  switchOffOne(index:number){
+    this.appareils[index].status = 'Off';
+  }
 
 }
