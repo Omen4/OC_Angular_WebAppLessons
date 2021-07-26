@@ -2,18 +2,30 @@ export class AppareilService{
 
   appareils = [
     {
+      id:1,
       name: 'Machine à laver',
       status: 'Off'
     },
     {
+      id:2,
       name: 'Télévision',
       status: 'On'
     },
     {
+      id:3,
       name: 'Ordinateur',
       status: 'Off'
     }
   ];
+
+  getAppareilById(id: number){
+     const appareil = this.appareils.find(
+       (appareilObject) => {
+         return appareilObject.id === id;
+       }
+     );
+     return appareil;
+  }
 
   switchOnAll(){
     this.appareils.forEach(appareil => {

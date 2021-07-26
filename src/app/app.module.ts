@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -11,10 +11,13 @@ import { AppareilService } from './services/appareil.service';
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 
 const appRoutes: Routes =[
   {path: 'appareils', component: AppareilViewComponent},
-  {path: 'auth', component: AuthComponent},
+  {path: 'appareils/:id', component: SingleAppareilComponent},
+  {path: 'authentification', component: AuthComponent},
   {path: '', component: AppareilViewComponent}
 ];
 
@@ -25,7 +28,8 @@ const appRoutes: Routes =[
     MonPremierComponent,
     AppareilComponent,
     AuthComponent,
-    AppareilViewComponent
+    AppareilViewComponent,
+    SingleAppareilComponent
   ],
   imports: [
     FormsModule,
@@ -33,7 +37,7 @@ const appRoutes: Routes =[
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AppareilService],
+  providers: [AppareilService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

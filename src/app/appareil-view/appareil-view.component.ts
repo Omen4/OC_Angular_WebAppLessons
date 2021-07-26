@@ -11,7 +11,6 @@ export class AppareilViewComponent implements OnInit {
   isAuth = false;
   appareils: any[] = [];
 
-  // lastUpdate = new Date();
 
   lastUpdate = new Promise<Date>((resolve, reject) => {
     const date = new Date();
